@@ -1,0 +1,40 @@
+name: flutter_payment_method
+description: A new Flutter application.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.0
+  rxdart: ^0.25.0
+  connectivity: ^2.0.1 # package listen network status
+  dio: ^3.0.10
+  hive: ^1.4.4+1 #local store
+  path_provider: ^1.6.24
+  crypto: ^2.1.5
+  webview_flutter: ^1.0.7
+  flutter_spinkit: ^4.1.2+1
+  toast: ^0.1.5 # Plugin show toaster
+  stripe_payment: ^1.0.9
+  get_ip:
+    git:
+      url: git://github.com/lotrofans/get_ip_flutter.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+
+flutter_intl:
+  enabled: true
