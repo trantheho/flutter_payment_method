@@ -26,8 +26,8 @@ class AppConstant{
 
   // One Pay
   static String onePayMerchant = 'TESTONEPAY';
-  static String onePayAccessCode = '6BEB2546';
-  static String onePaySecret = '6D0870CDE5F24F34F3915FB0045120DB';
+  static String onePayAccessCode = '';
+  static String onePaySecret = '';
   static String onePayReturnUrl = 'https://localhost/returnurl';
   static String onePayUrl = 'https://mtf.onepay.vn/paygate/vpcpay.op?';
 }

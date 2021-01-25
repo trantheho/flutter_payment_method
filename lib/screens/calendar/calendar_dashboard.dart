@@ -1,18 +1,17 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_payment_method/screens/calendar/calendar_dashboard.dart';
-import 'package:flutter_payment_method/screens/ngan_luong/ngan_luong_screen.dart';
-import 'package:flutter_payment_method/screens/one_pay/one_pay_screen.dart';
-import 'package:flutter_payment_method/screens/payment/payment_dashboard.dart';
-import 'package:flutter_payment_method/screens/stripe/stripe_card_payment_screen.dart';
+import 'package:flutter_payment_method/screens/calendar/event/event_calendar_screen.dart';
+import 'package:flutter_payment_method/screens/calendar/month/month_calendar.dart';
+import 'package:flutter_payment_method/screens/calendar/week/week_calendar.dart';
 import 'package:flutter_payment_method/utils/app_helper.dart';
 import 'package:flutter_payment_method/utils/app_screen_name.dart';
 
-class MainScreen extends StatefulWidget {
+class CalendarDashboard extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _CalendarDashboardState createState() => _CalendarDashboardState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _CalendarDashboardState extends State<CalendarDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,12 +19,17 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'App method'.toUpperCase(),
+          'Calendar Dashboard'.toUpperCase(),
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,
             color: Colors.blueGrey,
           ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.blueGrey,),
+          iconSize: 24,
+          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: SingleChildScrollView(
@@ -36,40 +40,37 @@ class _MainScreenState extends State<MainScreen> {
             children: [
               SizedBox(height: 50,),
 
-              Text(
-                'Dashboard',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.blueGrey,
-                ),
-              ),
-
               SizedBox(height: 20,),
 
               _buildItemPayment(
-                title: 'Calendar',
-                onPressed: (){
-                  AppHelper.navigatePush(
-                      context,
-                      AppScreenName.calendarDashboard,
-                      CalendarDashboard(),
-                    );
-                  }
-              ),
-
-              SizedBox(height: 20,),
-
-              _buildItemPayment(
-                  title: 'Payment',
+                  title: 'Event calendar',
                   onPressed: (){
-                    AppHelper.navigatePush(
-                      context,
-                      AppScreenName.paymentDashboard,
-                      PaymentDashboard(),
-                    );
+                    AppHelper.navigatePush(context, AppScreenName.eventCalendar,
+                        EventCalendarScreen());
                   }
               ),
+
+              SizedBox(height: 10,),
+
+              _buildItemPayment(
+                  title: 'Month',
+                  onPressed: (){
+                    AppHelper.navigatePush(context, AppScreenName.monthCalendar,
+                        MonthCalendarScreen());
+                  }
+              ),
+
+              SizedBox(height: 10,),
+
+              _buildItemPayment(
+                  title: 'Week',
+                  onPressed: (){
+                    AppHelper.navigatePush(context, AppScreenName.weekCalendar,
+                        WeekCalendarScreen());
+                  }
+              ),
+
+              SizedBox(height: 10,),
 
             ],
           ),

@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_payment_method/screens/calendar/calendar_dashboard.dart';
 import 'package:flutter_payment_method/screens/ngan_luong/ngan_luong_screen.dart';
 import 'package:flutter_payment_method/screens/one_pay/one_pay_screen.dart';
-import 'package:flutter_payment_method/screens/payment/payment_dashboard.dart';
 import 'package:flutter_payment_method/screens/stripe/stripe_card_payment_screen.dart';
 import 'package:flutter_payment_method/utils/app_helper.dart';
 import 'package:flutter_payment_method/utils/app_screen_name.dart';
 
-class MainScreen extends StatefulWidget {
+class PaymentDashboard extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _PaymentDashboardState createState() => _PaymentDashboardState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _PaymentDashboardState extends State<PaymentDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,12 +18,17 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'App method'.toUpperCase(),
+          'Payment Dashboard'.toUpperCase(),
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,
             color: Colors.blueGrey,
           ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.blueGrey,),
+          iconSize: 24,
+          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: SingleChildScrollView(
@@ -37,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
               SizedBox(height: 50,),
 
               Text(
-                'Dashboard',
+                'Out App Method',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
@@ -48,28 +51,88 @@ class _MainScreenState extends State<MainScreen> {
               SizedBox(height: 20,),
 
               _buildItemPayment(
-                title: 'Calendar',
-                onPressed: (){
-                  AppHelper.navigatePush(
+                  title: 'Ngân Lượng',
+                  onPressed: (){
+                    AppHelper.navigatePush(
                       context,
-                      AppScreenName.calendarDashboard,
-                      CalendarDashboard(),
+                      AppScreenName.nganLuong,
+                      NganLuongScreen(),
                     );
+                  }
+              ),
+
+              SizedBox(height: 10,),
+
+              _buildItemPayment(
+                  title: 'MoMo',
+                  onPressed: (){
+
+                  }
+              ),
+
+              SizedBox(height: 10,),
+
+              _buildItemPayment(
+                  title: 'Stripe',
+                  onPressed: (){
+
+                    AppHelper.navigatePush(
+                      context,
+                      AppScreenName.stripe,
+                      StripeCardPaymentScreen(
+                        clientSecret: '',
+                        totalAmount: 250000,
+                      ),
+                    );
+
+                  }
+              ),
+
+              SizedBox(height: 10,),
+
+
+              _buildItemPayment(
+                  title: 'One Pay',
+                  onPressed: (){
+
+                    AppHelper.navigatePush(
+                      context,
+                      AppScreenName.onePay,
+                      OnePayScreen(),
+                    );
+                  }
+              ),
+
+              SizedBox(height: 10,),
+
+              _buildItemPayment(
+                  title: 'Hyper Pay',
+                  onPressed: (){
+
                   }
               ),
 
               SizedBox(height: 20,),
 
+              Text(
+                'In App Purchase',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.blueGrey,
+                ),
+              ),
+
+              SizedBox(height: 20,),
+
               _buildItemPayment(
-                  title: 'Payment',
+                  title: 'In App Purchase',
                   onPressed: (){
-                    AppHelper.navigatePush(
-                      context,
-                      AppScreenName.paymentDashboard,
-                      PaymentDashboard(),
-                    );
+
                   }
               ),
+
+
 
             ],
           ),

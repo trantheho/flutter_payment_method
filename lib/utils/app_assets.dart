@@ -10,5 +10,7 @@ class AppImages {
   static const icDinnerClub = 'assets/icons/dinners_club.png';
   static const icAmericanExpress = 'assets/icons/american_express.png';
   static const icUnion = 'assets/icons/union.png';
+  static const headerCalendarBackground = 'assets/images/background_header_calendar.png';
+  static const icBookmark = 'assets/icons/ic_bookmark.png';
 
 }

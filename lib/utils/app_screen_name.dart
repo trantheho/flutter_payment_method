@@ -6,5 +6,10 @@ class AppScreenName {
   static const onePay = 'onePayScreen';
   static const hyperPay = 'hyperPay';
   static const inAppPurchase = 'inAppPurchaseScreen';
+  static const calendarDashboard = 'calendarDashboardScreen';
+  static const paymentDashboard = 'paymentDashboardScreen';
+  static const eventCalendar = 'eventCalendarScreen';
+  static const monthCalendar = 'monthCalendarScreen';
+  static const weekCalendar = 'weekCalendarScreen';
 
 }

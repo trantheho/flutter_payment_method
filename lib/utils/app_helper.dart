@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_payment_method/main_bloc.dart';
 import 'package:flutter_payment_method/widgets/dialog.dart';
 import 'package:toast/toast.dart';
+import 'package:intl/intl.dart';
 
 class AppHelper{
 
@@ -68,6 +69,33 @@ class AppHelper{
 
   static void hideKeyboard(context) {
     FocusScope.of(context).unfocus();
+  }
+
+  static double responsiveSize(context, {@required double value}) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double result = value * screenWidth / 375;
+    return result ?? value ?? 0;
+  }
+
+  static double screenWidth(BuildContext context){
+    return MediaQuery.of(context).size.width;
+  }
+
+  static double screenHeight(BuildContext context){
+    return MediaQuery.of(context).size.height;
+  }
+
+  static double statusBarHeight(BuildContext context){
+    return MediaQuery.of(context).padding.top;
+  }
+
+  static String formatDateTime(DateTime dateTime){
+    final DateFormat formatter = DateFormat('MMMM dd, yyyy');
+    return formatter.format(dateTime);
+  }
+
+  static String formatDateToTimeHHMM(DateTime dateTime){
+    return DateFormat.jm().format(dateTime);
   }
 
 

@@ -24,16 +24,21 @@ class OnePayBloc extends AppBloc{
   }
 
   Future<void> checkoutOnePay(int amount, BuildContext context) async{
-    loading.push(true);
-    String param = await createUrl(amount.toString(),'1234');
-    String url = AppConstant.onePayUrl + param;
+    if(AppConstant.onePayAccessCode.isEmpty && AppConstant.onePaySecret.isEmpty){
+      AppHelper.showToaster('Please add your access code and secret code');
+    }
+    else{
+      loading.push(true);
+      String param = await createUrl(amount.toString(),'1234');
+      String url = AppConstant.onePayUrl + param;
 
-    loading.push(false);
-    AppHelper.navigatePush(context, AppScreenName.onePay,
-      OnePayResultScreen(
-        url: url,
-      ),
-    );
+      loading.push(false);
+      AppHelper.navigatePush(context, AppScreenName.onePay,
+        OnePayResultScreen(
+          url: url,
+        ),
+      );
+    }
   }
 
   Future<String> createUrl(String amount, String orderId) async {
