@@ -16,8 +16,12 @@ class _RevenueCatPurchaseState extends State<RevenueCatPurchase> {
 
   final List<ProductModel> listProduct = [
     ProductModel(imageAsset: AppImages.beemo, name: "Beemo", price: "99.000đ"),
-    ProductModel(imageAsset: AppImages.teemoPro, name: "Teemo Omega", price: "99.000đ"),
-    ProductModel(imageAsset: AppImages.teemoVip, name: "Teemo Phong Linh", price: "99.000đ"),
+    ProductModel(
+        imageAsset: AppImages.teemoPro, name: "Teemo Omega", price: "99.000đ"),
+    ProductModel(
+        imageAsset: AppImages.teemoVip,
+        name: "Teemo Phong Linh",
+        price: "99.000đ"),
   ];
 
   @override
@@ -25,7 +29,6 @@ class _RevenueCatPurchaseState extends State<RevenueCatPurchase> {
     super.initState();
     initPlatformState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -43,54 +46,55 @@ class _RevenueCatPurchaseState extends State<RevenueCatPurchase> {
           ),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.blueGrey,),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.blueGrey,
+          ),
           iconSize: 24,
           onPressed: () => Navigator.of(context).pop(),
         ),
-
       ),
       body: Stack(
         children: [
-
           Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: Image.asset(AppImages.logoRevenueCat),
           ),
-
-         Column(
-           children: [
-
-             FittedBox(
-               child: Row(
-                 children: [
-                   for(var pro in listProduct)
-                     ItemProduct(product: pro,)
-                 ],
-               ),
-             ),
-
-             SizedBox(height: 50,),
-
-             TextButton(
-               style: ButtonStyle(
-                 backgroundColor: MaterialStateProperty.all<Color>(Colors.blueGrey),
-               ),
-               child: Text(
-                 'Payment'.toUpperCase(),
-                 style: TextStyle(
-                   fontSize: 14,
-                   color: Colors.white,
-                 ),
-               ),
-               onPressed: (){
-                 AppHelper.showToaster("Please check logic", context);
-               },
-             ),
-
-           ],
-         )
+          Column(
+            children: [
+              FittedBox(
+                child: Row(
+                  children: [
+                    for (var pro in listProduct)
+                      ItemProduct(
+                        product: pro,
+                      )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              TextButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blueGrey),
+                ),
+                child: Text(
+                  'Payment'.toUpperCase(),
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {
+                  AppHelper.showToaster("Please check logic", context);
+                },
+              ),
+            ],
+          )
         ],
       ),
     );
@@ -100,9 +104,7 @@ class _RevenueCatPurchaseState extends State<RevenueCatPurchase> {
     await Purchases.setDebugLogsEnabled(true);
     await Purchases.setup("your revenue key", appUserId: "app user id");
   }
-
 }
-
 
 class ItemProduct extends StatelessWidget {
   final ProductModel product;
@@ -116,11 +118,14 @@ class ItemProduct extends StatelessWidget {
         Container(
           width: 150,
           height: 250,
-          child: Image.asset(product.imageAsset, fit: BoxFit.cover,),
+          child: Image.asset(
+            product.imageAsset,
+            fit: BoxFit.cover,
+          ),
         ),
-
-        SizedBox(height: 10,),
-
+        SizedBox(
+          height: 10,
+        ),
         Text(
           product.name,
           style: TextStyle(
@@ -128,7 +133,6 @@ class ItemProduct extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-
         Text(
           product.price,
           style: TextStyle(
@@ -140,4 +144,3 @@ class ItemProduct extends StatelessWidget {
     );
   }
 }
-
