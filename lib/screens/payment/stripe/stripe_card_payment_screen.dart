@@ -6,12 +6,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_payment_method/screens/stripe/stripe_card_payment_bloc.dart';
-import 'package:flutter_payment_method/screens/stripe/stripe_service/stripe_service.dart';
 import 'package:flutter_payment_method/utils/app_assets.dart';
 import 'package:flutter_payment_method/utils/app_helper.dart';
 import 'package:flutter_payment_method/utils/input_formatter.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+import 'stripe_card_payment_bloc.dart';
+import 'stripe_service/stripe_service.dart';
 
 class StripeCardPaymentScreen extends StatefulWidget {
   final String clientSecret;

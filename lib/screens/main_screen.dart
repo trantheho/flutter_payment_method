@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_payment_method/screens/calendar/calendar_dashboard.dart';
-import 'package:flutter_payment_method/screens/ngan_luong/ngan_luong_screen.dart';
-import 'package:flutter_payment_method/screens/one_pay/one_pay_screen.dart';
 import 'package:flutter_payment_method/screens/payment/payment_dashboard.dart';
-import 'package:flutter_payment_method/screens/stripe/stripe_card_payment_screen.dart';
 import 'package:flutter_payment_method/utils/app_helper.dart';
 import 'package:flutter_payment_method/utils/app_screen_name.dart';
 

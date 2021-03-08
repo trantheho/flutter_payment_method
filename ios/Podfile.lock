@@ -7,6 +7,14 @@ PODS:
     - Flutter
   - path_provider (0.0.1):
     - Flutter
+  - Purchases (3.9.2):
+    - PurchasesCoreSwift (= 3.9.2)
+  - purchases_flutter (2.0.3):
+    - Flutter
+    - PurchasesHybridCommon (= 1.5.0)
+  - PurchasesCoreSwift (3.9.2)
+  - PurchasesHybridCommon (1.5.0):
+    - Purchases (= 3.9.2)
   - Reachability (3.2)
   - Stripe (19.4.0)
   - stripe_payment (1.0.0):
@@ -20,11 +28,15 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - get_ip (from `.symlinks/plugins/get_ip/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - purchases_flutter (from `.symlinks/plugins/purchases_flutter/ios`)
   - stripe_payment (from `.symlinks/plugins/stripe_payment/ios`)
   - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
 
 SPEC REPOS:
   trunk:
+    - Purchases
+    - PurchasesCoreSwift
+    - PurchasesHybridCommon
     - Reachability
     - Stripe
 
@@ -37,6 +49,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/get_ip/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
+  purchases_flutter:
+    :path: ".symlinks/plugins/purchases_flutter/ios"
   stripe_payment:
     :path: ".symlinks/plugins/stripe_payment/ios"
   webview_flutter:
@@ -47,6 +61,10 @@ SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   get_ip: c063133e0a399ae4089048c90d6a232cb2344846
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  Purchases: d8a798c9c7552fe66b550bf314a143e94ffa70c8
+  purchases_flutter: c1ef4056da1346795a708bdefce81e0a56e8134f
+  PurchasesCoreSwift: ea4eabae180416e580ac60366f41aa1fefec0693
+  PurchasesHybridCommon: d9bfb34309db4c9ba82a6f7f3a6275c13befdca7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Stripe: 92f1c73a9dbd3c54277ed06a1fea6e08f20414c6
   stripe_payment: 1cbe9c339c21b5ecf01035e80eea351067c67c56

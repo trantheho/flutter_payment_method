@@ -12,5 +12,9 @@ class AppImages {
   static const icUnion = 'assets/icons/union.png';
   static const headerCalendarBackground = 'assets/images/background_header_calendar.png';
   static const icBookmark = 'assets/icons/ic_bookmark.png';
+  static const logoRevenueCat = 'assets/images/revenuecat_logo.png';
+  static const beemo = 'assets/images/teemo_bee.jpg';
+  static const teemoPro = 'assets/images/teemo_pro.jpg';
+  static const teemoVip = 'assets/images/teemo_vip.jpg';
 
 }

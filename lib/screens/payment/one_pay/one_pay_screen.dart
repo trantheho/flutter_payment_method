@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_payment_method/screens/ngan_luong/ngan_luong_bloc.dart';
-import 'package:flutter_payment_method/screens/one_pay/one_pay_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+import 'one_pay_bloc.dart';
 
 class OnePayScreen extends StatefulWidget {
   @override

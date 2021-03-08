@@ -3,11 +3,12 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_payment_method/base/bloc.dart';
 import 'package:flutter_payment_method/model/ngan_luong_model.dart';
-import 'package:flutter_payment_method/screens/ngan_luong/result/ngan_luong_result_screen.dart';
 import 'package:flutter_payment_method/service/app_api.dart';
 import 'package:flutter_payment_method/utils/app_constants.dart';
 import 'package:flutter_payment_method/utils/app_helper.dart';
 import 'package:flutter_payment_method/utils/app_screen_name.dart';
+
+import 'result/ngan_luong_result_screen.dart';
 
 class NganLuongBloc extends AppBloc{
   final loading = BlocDefault<bool>();

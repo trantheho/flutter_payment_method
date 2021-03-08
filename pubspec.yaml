@@ -22,6 +22,8 @@ dependencies:
   flutter_spinkit: ^4.1.2+1
   toast: ^0.1.5 # Plugin show toaster
   stripe_payment: ^1.0.9
+  purchases_flutter: ^2.0.3 # plugin for revenue cat in app purchase
+  google_fonts: ^1.1.2
   get_ip:
     git:
       url: git://github.com/lotrofans/get_ip_flutter.git

@@ -9,9 +9,10 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_payment_method/screens/one_pay/result/one_pay_result_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
+import 'one_pay_result_bloc.dart';
 
 
 class OnePayResultScreen extends StatefulWidget {

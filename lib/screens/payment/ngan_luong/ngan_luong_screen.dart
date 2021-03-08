@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_payment_method/screens/ngan_luong/ngan_luong_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+import 'ngan_luong_bloc.dart';
 
 class NganLuongScreen extends StatefulWidget {
   @override

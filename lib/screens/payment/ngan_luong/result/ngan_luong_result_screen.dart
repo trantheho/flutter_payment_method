@@ -2,8 +2,9 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_payment_method/screens/ngan_luong/result/ngan_luong_result_bloc.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
+import 'ngan_luong_result_bloc.dart';
 
 class NganLuongResultScreen extends StatefulWidget {
   final String url;

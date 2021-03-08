@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_payment_method/screens/ngan_luong/ngan_luong_screen.dart';
-import 'package:flutter_payment_method/screens/one_pay/one_pay_screen.dart';
-import 'package:flutter_payment_method/screens/stripe/stripe_card_payment_screen.dart';
+import 'package:flutter_payment_method/screens/payment/in_app_purchase/revenuecat/revenuecat_purchase_screen.dart';
 import 'package:flutter_payment_method/utils/app_helper.dart';
 import 'package:flutter_payment_method/utils/app_screen_name.dart';
+
+import 'ngan_luong/ngan_luong_screen.dart';
+import 'one_pay/one_pay_screen.dart';
+import 'stripe/stripe_card_payment_screen.dart';
 
 class PaymentDashboard extends StatefulWidget {
   @override
@@ -128,7 +130,11 @@ class _PaymentDashboardState extends State<PaymentDashboard> {
               _buildItemPayment(
                   title: 'In App Purchase',
                   onPressed: (){
-
+                    AppHelper.navigatePush(
+                      context,
+                      AppScreenName.inAppPurchase,
+                      RevenueCatPurchase(),
+                    );
                   }
               ),
 

@@ -6,9 +6,10 @@ import 'package:flutter_payment_method/utils/app_constants.dart';
 import 'package:flutter_payment_method/utils/app_helper.dart';
 import 'package:flutter_payment_method/utils/app_screen_name.dart';
 import 'package:get_ip/get_ip.dart';
-import 'package:flutter_payment_method/screens/one_pay/result/one_pay_result_screen.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
+
+import 'result/one_pay_result_screen.dart';
 
 class OnePayBloc extends AppBloc{
   final loading = BlocDefault<bool>();
